@@ -71,6 +71,7 @@ else:
                 gauge={'axis': {'range': [0, 100]}, 'bar': {'color': "#2ecc71"},
                        'steps': [{'range': [0, 50], 'color': "#ff4b4b"}, {'range': [80, 100], 'color': "#2ecc71"}]}))
             st.plotly_chart(fig_gauge, use_container_width=True)
+            st.info("💡 หากดัชนีความปลอดภัย(สีเขียวด้านใน)ยิ่งใกล้100% แสดงว่าความปลอดภัยยิ่งมากขึ้นครับ")
         with c2:
             # Radar Chart เฉลี่ย 6 ด้าน
             categories = ['การเรียน', 'สุขภาพ', 'พฤติกรรม', 'เศรษฐกิจ', 'ปลอดภัย', 'ยาเสพติด']
@@ -83,6 +84,7 @@ else:
                     fig_radar.add_trace(go.Scatterpolar(r=v, theta=categories, fill='toself', name=f'เทอม {t}'))
             fig_radar.update_layout(polar=dict(radialaxis=dict(visible=True, range=[1, 3])))
             st.plotly_chart(fig_radar, use_container_width=True)
+            st.info("💡 ถ้าเส้นใยแมงมุมหดตัวเข้าใกล้จุดศูนย์กลาง(เลข1):แสดงว่าด้านนั้นอยู่ในเกณฑ์ดีเยี่ยมเด็กส่วนใหญ่ปกติ")
 
     # --- ส่วนที่ 2: Classroom Insights ---
     # --- ส่วนที่ 2: Classroom Insights ---
@@ -147,6 +149,6 @@ else:
                               color_discrete_map={all_terms[0]: '#3498db', all_terms[1]: '#f39c12'})
             st.plotly_chart(fig_comp, use_container_width=True)
             
-            st.info("💡 หากพื้นที่กราฟใยแมงมุม (ใน Tab 1) ของเทอม 2 เล็กลง แสดงว่าการพัฒนานักเรียนของโรงเรียนบ้านควนติหมุนได้ผลดีครับ")
+            st.info("💡 หากแผนภูมิของเทอม 2 ต่ำลง แสดงว่าการพัฒนานักเรียนของโรงเรียนบ้านควนตีหมุนได้ผลดีขึ้นครับ")
         else:
             st.info("กรุณาเลือกอย่างน้อย 2 ภาคเรียนที่แถบด้านข้างเพื่อเปรียบเทียบข้อมูลครับ")
