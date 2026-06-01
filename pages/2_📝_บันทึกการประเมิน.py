@@ -67,7 +67,7 @@ with st.sidebar:
 with st.form("assessment_form"):
     col_h1, col_h2 = st.columns(2)
     with col_h1:
-        term = st.text_input("ภาคเรียน/ปีการศึกษา", value="2/2569")
+        term = st.text_input("ภาคเรียน/ปีการศึกษา", value="1/2569")
     with col_h2:
         eval_date = st.date_input("วันที่ประเมิน", datetime.now())
     
